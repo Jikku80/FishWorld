@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = require("../util/database");
+const sequelize = require("../util/sqldb");
 
 const Product = sequelize.define("product",{
     id:{
@@ -9,16 +9,17 @@ const Product = sequelize.define("product",{
         allowNull: false,
         autoIncrement: true
     },
-    title: Sequelize.STRING,
-    price:{
+    fishName: Sequelize.STRING,
+    fishType: Sequelize.STRING,
+    fishPrice:{
         type: Sequelize.DOUBLE,
         allowNull: false
     },
-    description: {
+    fishDetail: {
         type: Sequelize.TEXT,
         allowNull: false
     },
-    imageUrl: {
+    fishImage: {
         type: Sequelize.STRING,
         allowNull: false
     }

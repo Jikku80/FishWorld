@@ -1,21 +1,19 @@
 const express = require("express");
-const shopController = require("../controllers/shop");
+const shopController = require("../controllers/fishWorld");
 
 const router = express.Router();
 
 router.get('/',shopController.getIndex);
 
-router.get('/products',shopController.getProducts);
+router.get('/FishLand',shopController.getProducts);
 
-router.get('/cart',shopController.getCart);
+router.get('/FishBag',shopController.getCart);
 
-router.post('/cart',shopController.postCart);
+router.post('/FishBag',shopController.postCart);
 
-router.get('/products/:productId',shopController.getProduct);
+router.get('/FishLand/:productId',shopController.getProduct);
 
 router.get('/orders',shopController.getOrders);
-
-router.get('/checkout',shopController.getCheckout);
 
 router.post('/cart-delete-item',shopController.postDeleteCartProduct);
 

@@ -1,7 +1,7 @@
 {
   "name": "01",
   "version": "1.0.0",
-  "description": "Web application with basic crud functionality to be hosted in aws.",
+  "description": "Fish Web Store with basic crud functionality to be hosted in aws.",
   "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

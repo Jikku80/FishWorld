@@ -5,7 +5,7 @@ exports.getProducts = (req, res, next) => {
     .then((products) =>
       res.render("shop/product-list", {
         prods: products,
-        pageTitle: "All Products",
+        pageTitle: "Fish Land",
         path: "/products",
       })
     )
@@ -13,14 +13,10 @@ exports.getProducts = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
-  Product.findAll()
-    .then((products) =>
-      res.render("shop/index", {
-        prods: products,
-        pageTitle: "Agua Trade",
-        path: "/",
-      })
-    )
+    res.render("shop/index", {
+      pageTitle: "Agua Trade",
+      path: "/",
+    })
     .catch((err) => console.log(err));
 };
 
@@ -41,14 +37,10 @@ exports.getCart = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
-exports.getCheckout = (req, res, next) => {
-  res.render("shop/checkout", { pageTitle: "Checkout", path: "/checkout" });
-};
-
 exports.getOrders = (req, res, next) => {
   req.user.getOrders({include:["products"]}).then(orders => {
     console.log(orders);
-    res.render("shop/orders", { orders: orders, pageTitle: "Fish Bag", path: "/orders" });
+    res.render("shop/orders", { orders: orders, pageTitle: "Fish Orders", path: "/orders" });
   })
 };
 
@@ -92,7 +84,7 @@ exports.postCart = (req, res, next) => {
       .then(product => {
         return fetchedCart.addProduct(product, {through: {quantity: newQuantity}});
       })
-      .then(() => res.redirect("/cart"))
+      .then(() => res.redirect("/FishBag"))
       .catch(err => console.log(err));
 };
 
@@ -104,7 +96,7 @@ exports.postDeleteCartProduct = (req, res, next) => {
     const product = products[0];
     return product.cartItem.destroy();
   }).then(() => {
-    res.redirect("/cart");
+    res.redirect("/FishBag");
   })
   .catch(err => console.log(err));
 };

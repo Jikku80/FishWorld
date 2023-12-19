@@ -1,11 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const adminRoutes = require("./routes/admin");
-const shopRouter = require("./routes/shop");
+const adminRoutes = require("./routes/rootUserRoute");
+const shopRouter = require("./routes/fishWorldRoute");
 const dirPath = require("./util/path");
 const path = require("path");
 const errorController = require("./controllers/error");
-const sequelize = require("./util/database");
+const sequelize = require("./util/sqldb");
 const Product = require("./models/product");
 const User = require("./models/user");
 const Cart = require("./models/cart");
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
     }).catch(err => console.log(err));
 });
 
-app.use("/admin", adminRoutes);
+app.use("/root", adminRoutes);
 app.use(shopRouter);
 
 app.use(errorController.get404);

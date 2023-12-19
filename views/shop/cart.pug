@@ -11,7 +11,7 @@ block content
                 ul.cart__item-list 
                     each p in cartProducts
                         li.cart__item
-                            h1 #{p.title}
+                            h1 #{p.fisName}
                             h2 Total Qt. : #{p.cartItem.quantity} 
                             form(action="/cart-delete-item" method="POST")
                                 input(type="hidden" name="productId" value=`${p.id}`)

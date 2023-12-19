@@ -6,10 +6,10 @@ block styles
 block content
     main 
         .order__Section
-            h2 Orders Made So Far
             if orders.length > 0
+                h2 Orders Made So Far
                 each order in orders
                     each product in order.products
-                        .orderdetail Order For #{product.orderItem.quantity} #{product.title}
+                        .orderdetail Order For #{product.orderItem.quantity} #{product.fishName}
             else
-                h1 No Orders Has Been Made Yet!!!
+                h2 No Orders Has Been Made Yet!!!

@@ -6,11 +6,12 @@ block styles
 block content
     main(style="text-align:center")
         .detail__Sec
-            h1 #{product.title}
+            h1 #{product.fisName}
             div
-                img.detail__image(src=`${product.imageUrl}` alt=`${product.title}`)
-            h2 Rs.#{product.price}
-            p #{product.description}
-            form(action="/cart" method="post")
+                img.detail__image(src=`${product.fishImage}` alt=`${product.fishName}`)
+            h2 Rs.#{product.fishPrice}
+            p #{product.fishType}
+            p #{product.fishDetail}
+            form(action="/FishBag" method="post")
                 input(type="hidden" name="productId" value=`${product.id}`)
                 button.btn(type="submit") Add to Cart

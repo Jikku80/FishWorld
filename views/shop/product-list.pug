@@ -10,15 +10,16 @@ block content
                 each product in prods
                     article.card.product-item
                         div.card__image
-                            img(src=`${product.imageUrl}`, alt="A Book")
+                            img(src=`${product.fishImage}`, alt="A Book")
                         header.card__header
-                            h1.product__title #{product.title}
+                            h1.product__title #{product.fishName}
                         div.card__content
-                            p.product__price Price : Rs.#{product.price}
-                            p.product__description Detail : #{product.description}
+                            p.product__price Price : Rs.#{product.fishPrice}
+                            p.product__type Category : #{product.fishType}
+                            p.product__description Detail : #{product.fishDetail}
                         .card__actions
-                            a.btn(href=`/products/${product.id}`) View
-                            form(action="/cart" method="POST")
+                            a.btn(href=`/FishLand/${product.id}`) View
+                            form(action="/FishBag" method="POST")
                                 input(type="hidden" name="productId" value=`${product.id}`)
                                 button.btn(type="submit") Add to Bag
         else

@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const sequelize = require("../util/database");
+const sequelize = require("../util/sqldb");
 
 const OrderItem =  sequelize.define("orderItem",{
     id:{
