@@ -24,6 +24,10 @@ exports.NewFish = (req, res, next) => {
       fishDetail: fishDetail,
     })
     .then((result) => {
+      res.status(201).json({
+        message: "Your Fish Has Been Added to DB",
+        result
+      })
       res.redirect("/FishLand");
     })
     .catch((err) => console.log(err));

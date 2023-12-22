@@ -17,7 +17,6 @@ exports.getIndex = (req, res, next) => {
       pageTitle: "Agua Trade",
       path: "/",
     })
-    .catch((err) => console.log(err));
 };
 
 exports.getCart = (req, res, next) => {
